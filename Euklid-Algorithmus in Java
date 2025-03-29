@@ -1,0 +1,51 @@
+package Algorithmik;
+
+public class Euklid {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		berechneEuklid(56, 64);
+	}
+	
+	//Methode zur Bestimmung des größten gemeinsamen Teiler der positiven ganzen Zahlen a und b
+	public static void berechneEuklid(int a, int b) {
+		int variable = 0;
+		int c = 0;
+		int counter = 1;
+		
+		//1. Wenn b > a ist, vertausche a und b.
+		if(b > a) {
+			variable = a;
+			a = b;
+			b = variable;
+		}
+			
+		while(b != 0){
+			//2. Sei c der Rest der Division von a durch b.
+			c = a%b;
+						
+			//3. Wenn c = 0 ist, dann ist der Algorithmus zu Ende und b das Ergebnis.
+			if (c == 0)	{
+				System.out.println("Das Ergebnis ist " + b + "!\nDurchgeführte Berechnungsschritte: " + counter);
+				break;
+			}
+			else if (c != 0) {
+				//4. a wird der Wert von b zugewiesen und b der Wert von c.
+				a = b;
+				b = c;
+			}
+			counter++;
+			//5. Fahre mit Schritt 2 fort.
+		}
+		
+	}	
+	
+}
+
+/*
+ * a) (21, 6) => 3
+ * b) (78, 273) => 39
+ * c) (12, 31) => 1
+ * d) (64, 34) => 2
+ */
